@@ -7,11 +7,11 @@ A producer should be able to add a message at any time and receive a message id 
 A consumer with a message id should be able to acknowledge receiving a message. A user should be able to get a general count of how many messages are still available or are currently being processed.
 
 ----
-----
 
 ## Requirements
 
 [Node.js](https://nodejs.org/en/)
+
 [Redis](https://redis.io/topics/quickstart)
 
 ## Up and Running
@@ -35,9 +35,13 @@ Takes a JSON object `{"messageId": "idk"}` containing the id of message to be de
 
 ## CLI
 A very simple CLI for WonderQ. **Usage**:
+
 		- `./cli info` => `GET/info`
+
 		- `./cli add [message]` => `POST/add [message]`
+
 		- `./cli receive` => `GET/receive`
+
 		- `./cli ack [messageId]` => `DELETE/acknowledge [messageId]`
 
 ## Tests
