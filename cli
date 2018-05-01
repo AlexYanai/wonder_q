@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "WonderQ CLI";
+if [ "$1" == "info" ]; then
+	echo $(curl -X GET http://localhost:3000/info)
+elif [ "$1" == "add" ]; then
+	echo $(curl -d '{"message":"${@:2}"}' -H "Content-Type: application/json" -X POST http://localhost:3000/add)
+elif [ "$1" == "receive" ]; then
+	echo $(curl -X GET http://localhost:3000/receive)
+elif [ "$1" == "ack" ]; then
+	echo $(curl -d '{"messageId":"$2"}' -H "Content-Type: application/json" -X DELETE http://localhost:3000/acknowledge)
+else
+	echo "Error: unknown command"
+fi

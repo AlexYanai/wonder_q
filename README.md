@@ -6,6 +6,9 @@ A producer should be able to add a message at any time and receive a message id 
 
 A consumer with a message id should be able to acknowledge receiving a message. A user should be able to get a general count of how many messages are still available or are currently being processed.
 
+----
+----
+
 ## Requirements
 
 [Node.js](https://nodejs.org/en/)
@@ -29,6 +32,13 @@ Moves a message from the queue to the active queue. Returns an object `{"message
 
 #### `DELETE/acknowledge [messageId]`
 Takes a JSON object `{"messageId": "idk"}` containing the id of message to be deleted. A consumer acknowledges it's consumed the the message by deleting it from the active queue before it reverts beack to the main queue.
+
+## CLI
+A very simple CLI for WonderQ. **Usage**:
+		- `./cli info` => `GET/info`
+		- `./cli add [message]` => `POST/add [message]`
+		- `./cli receive` => `GET/receive`
+		- `./cli ack [messageId]` => `DELETE/acknowledge [messageId]`
 
 ## Tests
 
