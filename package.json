@@ -3,9 +3,28 @@
   "version": "1.0.0",
   "description": "Wonder x SQS",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Alex Yanai",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "mocha --timeout 10000",
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "commander": "^2.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "mongoose": "^4.4.15",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "redis": "^2.8.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  }
 }
