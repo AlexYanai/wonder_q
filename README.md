@@ -1,5 +1,8 @@
 # WonderQ
 
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://github.com/AlexYanai/wonder_q/blob/master/LICENSE)
+
+
 WonderQ is a simple queueing system that allows for parallel reads and writes from multiple producers and consumers.
 
 A producer should be able to add a message at any time and receive a message id in return, and a consumer should be able to poll the message broker for new messages and receive either a new message id or a message that there are no available message.
@@ -36,13 +39,13 @@ Takes a JSON object `{"messageId": "idk"}` containing the id of message to be de
 ## CLI
 A very simple CLI for WonderQ. **Usage**:
 
-		- `./cli info` => `GET/info`
+- `./cli info` => `GET/info`
 
-		- `./cli add [message]` => `POST/add [message]`
+- `./cli add [message]` => `POST/add [message]`
 
-		- `./cli receive` => `GET/receive`
+- `./cli receive` => `GET/receive`
 
-		- `./cli ack [messageId]` => `DELETE/acknowledge [messageId]`
+- `./cli ack [messageId]` => `DELETE/acknowledge [messageId]`
 
 ## Tests
 
